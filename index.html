@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="customersApp">
+<head>
+    <title>Customer Manager</title>
+    <link href="public/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="public/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="public/css/customerManagementStyles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="public/css/styles.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand " href="#/">
+                    <img src="public/images/people.png" alt="logo"> Customer Manager
+                </a>
+                <ul class="nav nav-pills" data-ng-controller="NavbarController">
+                    <li data-ng-class="{'active':getClass('/customers')}"><a href="#/customers">Customers</a></li>
+                    <li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders">Orders</a></li>
+                    <li data-ng-class="{'active':getClass('/chat')}"><a href="#/chat">Chat Room</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
+         custom directive -->
+    <div animated-view></div>
+
+
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                                Some footers 1
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="public/js/angular.js"></script>
+    <script src="public/js/angular-route.js"></script>
+    <script src="public/js/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="public/js/bootstrap.js"></script>
+
+
+    <!-- App libs -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/customers.controllers.js"></script>
+    <script src="app/controllers/customers-orders.controllers.js"></script>
+    <script src="app/controllers/navbar.controllers.js"></script>
+    <script src="app/controllers/orders.controllers.js"></script>
+    <script src="app/controllers/order-child.controllers.js"></script>
+    <script src="app/controllers/chat.controller.js"></script>
+    <script src="app/services/customersService.js"></script>
+    <script src="app/directives/animatedView.js"></script>
+</body>
+</html>

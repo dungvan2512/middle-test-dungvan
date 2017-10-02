@@ -1,0 +1,16 @@
+<div class="chat">
+    <div class="container">
+        <header>
+            <h3>Chat Room</h3>          
+        </header>
+        <div>
+            <ul id="messages"></ul>
+            <span id="notifyUser"></span>
+            <form id="form" ng-submit="submitfunction()" >
+              <input type="hidden" id="user" value="" />
+              <input id="m" autocomplete="off" ng-keyup="notifyTyping()" placeholder="Type yor message here.." />
+              <input type="submit" id="button" value="Send"/>
+            </form>
+        </div>
+    </div>
+</div>
